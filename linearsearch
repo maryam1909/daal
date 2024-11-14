@@ -1,0 +1,27 @@
+
+class LinearSearch {
+
+static int recursiveSearch(int arr[], int l, int r, int key) {
+    if (r < l) {
+        return -1;
+    }
+    if (arr[l] == key) {
+        return l;
+    }
+    return recursiveSearch(arr, l + 1, r, key);
+}
+  public static void main(String[] args)
+  {
+      int[] arr = { 3, 4, 1, 7, 5 };
+      int n = arr.length;
+      
+      int key = 4;
+
+      int index = recursiveSearch(arr, 0, n - 1, key);
+      
+        if (index == -1)
+          System.out.println("Element is not present in the array");
+      else
+          System.out.println("Element found at position " + index);
+  }
+}
